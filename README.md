@@ -1,6 +1,3 @@
-# UnityShader_TextureBuilder
- Use programs to make "Unity Shader Texture" more efficient
-
 ----------------------------------------------------------------------------
 AMU528快速斜排拼图工具使用说明：
 

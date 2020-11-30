@@ -1,7 +1,8 @@
 # sewImage.py
 # -*- coding: UTF-8 -*-
-#主要函数包括sewRow(List)横向合并,sewColumn(List)纵向合并,sew2D(List)横纵矩阵合并
-#引用参数为python的列表list = [],其中横纵矩阵合并时需要二维列表，列表中的数据为str全路径字符串
+#图片拼接
+#主要函数包括sewRow横向合并,sewColumn纵向合并,sew2D横纵矩阵合并
+#引用参数为python的列表list = [],其中横纵矩阵合并时需要二维列表,列表中的数据为str全路径字符串
 #返回参数为PIL中的Image对象
 
 from PIL import Image
