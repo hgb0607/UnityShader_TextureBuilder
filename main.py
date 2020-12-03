@@ -4,6 +4,7 @@ import sewImage
 import fileIO
 import list_528
 import os
+import sys
 from PIL import Image
 
 input_PATH = './input/'
@@ -12,7 +13,7 @@ outputFile_PATH = './AnimDisplay_d.png'
 
 #指定主程序入口
 def main():
- AMU528()
+ DiagonalImage()
 
 #初始化程序,引导文件的导入
 def initprogram():
@@ -20,6 +21,27 @@ def initprogram():
  fileIO.initdir('input')
  print('请将待处理文件拷贝至input文件夹中...')
  input('复制完成后，按下回车继续处理...')
+
+#任意斜排拼图
+def DiagonalImage():
+ initprogram()
+ fileList = list_file(input_PATH)
+ try:
+  r,c = map(int, input('请输入：列数 行数\n').split())
+ except:
+  print('Error: 输入格式有误！！！')
+  sys.exit(0)
+ frame = r * c
+ print('\n\n即将生成'+str(r)+'列'+str(c)+'行的图像,需要共'+str(frame)+'张图\n\n')
+ input('按下回车继续处理')
+ if len(fileList) == frame:
+  finish_image = sewImage.sew2D(list_528.DiagonalList(fileList, r, c))
+  print('请勿退出，正在保存文件... ...')
+  finish_image.save(outputFile_PATH)
+  input('\n文件已成功保存，按下回车退出程序')
+ else:
+  print('\n请核查导入的文件数量！')
+  input('\n按下回车退出程序')
 
 #528斜排拼图
 def AMU528():
